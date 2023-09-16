@@ -1,0 +1,5 @@
+﻿  Task_3.c
+C:\Users\Home\source\repos\Lab_2\Lab_2\Task_3.c(14,9): warning C4473: "printf": передано недостаточно аргументов для строки формата
+C:\Users\Home\source\repos\Lab_2\Lab_2\Task_3.c(14,9): message : заполнители и их параметры ожидают переменное число аргументов в количестве 2, но было предоставлено 1
+C:\Users\Home\source\repos\Lab_2\Lab_2\Task_3.c(14,9): message : отсутствующий вариативный аргумент "2" требуется для строки форматирования "%d"
+  Lab_2.vcxproj -> C:\Users\Home\source\repos\Lab_2\x64\Debug\Lab_2.exe
