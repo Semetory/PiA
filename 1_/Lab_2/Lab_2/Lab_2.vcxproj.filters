@@ -18,12 +18,6 @@
     <ClCompile Include="Task_1.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Task_2.c">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Task_3.c">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task_3.h">

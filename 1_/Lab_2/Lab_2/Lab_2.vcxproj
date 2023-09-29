@@ -128,8 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Task_1.c" />
-    <ClCompile Include="Task_2.c" />
-    <ClCompile Include="Task_3.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task_3.h" />
