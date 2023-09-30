@@ -1,0 +1,9 @@
+﻿  Task_1-3,4.c
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(18,8): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "double *"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(18,8): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "2" имеет тип "double *"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(19,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "double"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(19,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "double"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(24,8): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "double *"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(24,8): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "2" имеет тип "double *"
+C:\Users\Home\source\repos\Lab_3\Lab_3\Task_1-3,4.c(25,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "double"
+  Lab_3.vcxproj -> C:\Users\Home\source\repos\Lab_3\x64\Debug\Lab_3.exe
