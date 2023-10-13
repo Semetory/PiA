@@ -1,0 +1,5 @@
+﻿  l.c
+C:\Users\Home\source\repos\Lab4\Lab4\l.c(40,8): warning C4476: "scanf": неизвестный символ поля типа "." в описателе формата
+C:\Users\Home\source\repos\Lab4\Lab4\l.c(40,15): warning C4474: "scanf" : для строки формата передано слишком много аргументов
+C:\Users\Home\source\repos\Lab4\Lab4\l.c(40,15): message : заполнители и их параметры ожидают переменное число аргументов в количестве 0, но было предоставлено 1
+  Lab4.vcxproj -> C:\Users\Home\source\repos\Lab4\x64\Debug\Lab4.exe

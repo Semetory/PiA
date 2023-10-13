@@ -1,0 +1,3 @@
+﻿  T4_28.c
+C:\Users\Home\source\repos\Lab3_t4\Lab3_t4\T4_28.c(13,12): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Lab3_t4.vcxproj -> C:\Users\Home\source\repos\Lab3_t4\x64\Debug\Lab3_t4.exe
