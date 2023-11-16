@@ -1,0 +1,5 @@
+﻿  Lab6.c
+C:\Users\Home\source\repos\Lab6\Lab6\Lab6.c(47,15): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab6\Lab6\Lab6.c(83,35): warning C4244: функция: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab6\Lab6\Lab6.c(83,62): warning C4244: функция: преобразование "double" в "float", возможна потеря данных
+  Lab6.vcxproj -> C:\Users\Home\source\repos\Lab6\x64\Debug\Lab6.exe
