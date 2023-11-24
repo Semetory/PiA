@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lab5.c" />
+    <ClCompile Include="Lab5_DZ4.c" />
+    <ClCompile Include="Lab5_0.c" />
+    <ClCompile Include="Lab5_1.c" />
+    <ClCompile Include="Lab5_2.c" />
+    <ClCompile Include="Lab5_3.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
