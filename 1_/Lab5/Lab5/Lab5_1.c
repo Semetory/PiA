@@ -9,16 +9,16 @@
 #define M_PI 3.14159265358979323846
 
 
-Gradusez(long float gr) {
+long float Gradusez(long float gr) {
 
 	 long float g = sin(gr * (M_PI / 180));
 	 return g;
 
 }
 
-main() {
+long float main() {
 
-	 long float gr = 0;
+	long float gr = 0;
 
 	setlocale(LC_CTYPE, "RUS");
 
@@ -26,8 +26,8 @@ main() {
 	puts("Введите градус");
 
 	scanf("%lf",&gr);
-	float Ggr = Gradusez(gr);
+	long float Ggr = Gradusez(gr);
 
-	printf("Результат синус: %.1f град %lf", gr, sin(gr * (M_PI / 180)));
+	printf("Результат синус: %.1f град %lf", gr, Ggr);
 
 }*/
