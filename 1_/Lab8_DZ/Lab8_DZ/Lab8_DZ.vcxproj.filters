@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab8_1.c">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Lab8_0.c">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Lab8_2.c">
+    <ClCompile Include="Lab8_DZ.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

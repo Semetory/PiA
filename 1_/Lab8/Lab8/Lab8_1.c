@@ -5,24 +5,32 @@
 #include <locale.h>
 #include <math.h>
 
+Nm(int n) {
+
+	int s = 0;
+	int m = 0;
+
+	for (int i = n - m; m <= n; m++) {
+
+		s += i;
+		printf("результат %d\n", s);
+
+	}
+
+}
+
 main() {
 
 	int n = 0;
-	int m = 0;
-	int s = 0;
 	int k = 0;
 
 	setlocale(LC_CTYPE, "RUS");
+	puts("Вычесление суммы чисел от m до n(включительно)");
 	puts("Введите знаяение переменной n");
 	scanf("%d", &n);
 
-	for (int i = m; i >= n; i--) {
-	
-		s += i;
-		return k+=k++;
-		return s;
-	}
-	printf("результат %d", s);
-	printf("\nвыполнено %d раз", k++);
+	Nm(n);
+
+	printf("\nвыполнено %d раз", n+1);
 
 }
