@@ -1,0 +1,10 @@
+﻿  Lab11.c
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(26,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(64,39): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(71,43): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(81,43): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(103,11): warning C4101: Las: неиспользованная локальная переменная
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(32): warning C4716: MAssa: должна возвращать значение
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(94): warning C4716: Ans: должна возвращать значение
+C:\Users\Home\source\repos\Lab11\Lab11\Lab11.c(121): warning C4716: iNdiv: должна возвращать значение
+  Lab11.vcxproj -> C:\Users\Home\source\repos\Lab11\x64\Debug\Lab11.exe

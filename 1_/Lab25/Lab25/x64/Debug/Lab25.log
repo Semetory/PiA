@@ -1,0 +1,6 @@
+﻿  Lab25_1.c
+  Lab25_2.c
+C:\Users\Home\source\repos\Lab25\Lab25\Lab25_2.c(8,14): warning C4013: rand: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода...
+C:\Users\Home\source\repos\Lab25\Lab25\Lab25_2.c(24): warning C4716: KNB: должна возвращать значение
+  Lab25.vcxproj -> C:\Users\Home\source\repos\Lab25\x64\Debug\Lab25.exe

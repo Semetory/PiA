@@ -1,0 +1,19 @@
+﻿  Lab12.c
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,62): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,67): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,64): error C2100: недопустимое косвенное обращение
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,9): warning C4477: "printf": в строке форматирования "%p" требуется аргумент типа "void *", но вариативный аргумент "1" имеет тип "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,9): warning C4313: printf: конфликт "%p" в строке формата с аргументом 1 типа "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(25,9): warning C4477: "printf": в строке форматирования "%g" требуется аргумент типа "double", но вариативный аргумент "2" имеет тип "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,62): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,67): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,64): error C2100: недопустимое косвенное обращение
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,9): warning C4477: "printf": в строке форматирования "%p" требуется аргумент типа "void *", но вариативный аргумент "1" имеет тип "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,9): warning C4313: printf: конфликт "%p" в строке формата с аргументом 1 типа "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(27,9): warning C4477: "printf": в строке форматирования "%g" требуется аргумент типа "double", но вариативный аргумент "2" имеет тип "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,62): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,67): error C2065: pa: необъявленный идентификатор
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,64): error C2100: недопустимое косвенное обращение
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,9): warning C4477: "printf": в строке форматирования "%p" требуется аргумент типа "void *", но вариативный аргумент "1" имеет тип "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,9): warning C4313: printf: конфликт "%p" в строке формата с аргументом 1 типа "int"
+C:\Users\Home\source\repos\Lab12\Lab12\Lab12.c(29,9): warning C4477: "printf": в строке форматирования "%g" требуется аргумент типа "double", но вариативный аргумент "2" имеет тип "int"
