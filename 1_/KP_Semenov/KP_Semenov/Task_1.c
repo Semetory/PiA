@@ -1,87 +1,138 @@
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
-#define M_PI 3.14159265358979323846 //Число PI
+#define _CRT_SECURE_NO_DEPRECATE
 
-char grid[28][56];
+#define SCREENW 60
+#define SCREENH 80
+#define PI 3.14
 
-int plot(int x, int y);
-void init_grid(void);
-void show_grid(void);
+typedef double (*TFun) (double);
+void plot(double x0, double x1, TFun f);
+double fun1(double x);
+double fun2(double x);
 
-int main()
-{
-    float x, y;
+int main() {
 
-    init_grid();
-    for (x = -M_PI; x <= M_PI; x += 0.3)
-    {
-        //y = pow(x, 2) - M_PI * x * cos(M_PI * x);
-        y = cos(x);
-        //plot(rintf(x), rintf(y)); 
-        //plot(x,y);
-        plot(x, pow(x, 2) - M_PI * x * cos(M_PI * x));
+    double x, y;
+    int Var = 0;
+
+    setlocale(LC_ALL, "RUS");
+
+    puts("Приветствую тебя пользователь");
+    puts("Данная программа строит график функции по введенным значениям x и y");
+
+    puts("Выбирете исспользуемую формулу для построения графика функции, и введите её номер (1 или 2).");
+    puts("Первая(1) : Y(x) = x ^ 2 - PI * x * cos(PI * x)");
+    puts("Вторая (2): V(x) = \n(1 + x + pow(x, 2)) / (1 + pow(x,2)), если х < 0\n");
+    puts("sqrt(1 + (2 * x) / (1 + pow(x, 2))), если 0 <= x<1\n2 * abs(0.5 + sin(x)), если x >= 1");
+
+    puts("\nВведите номер:");
+    scanf("%i", &Var);
+
+    puts("Введите x и y");
+    scanf("%lf%lf", &x, &y);
+
+    switch (Var) {
+
+    case 1:
+        plot(x, y, fun1);
+        break;
+    case 2:
+        plot(x, y, fun2);
+        break;
+    default:
+        puts("При выборе номера функции была допущена ошибка");
+        break;
     }
-    show_grid();
-    system("pause");
-    return 0;
+
 }
 
-/* Устанавливаем «пиксель» по определенным координатам */
+double fun1(double x) { return pow(x,2)-PI*x*cos(PI*x); }
 
-int plot(int x, int y)
-{
-    int WIDTH = 56;
-    int HEIGHT = 28;
-    int X = WIDTH / 2;
-    int Y = HEIGHT / 2;
+double fun2(double x) { 
+    
+    if(x<0)  return (1 + x + pow(x, 2)) / (1 + pow(x,2));
+
+    if(x>=0 || x<1)  return sqrt(1 + (2 * x) / (1 + pow(x, 2)));
+
+    if (x>=1)  return 2 * abs(0.5 + sin(x));
+
+}
+
+
+void plot(double x0, double x1, TFun f) {
    
-    if (x > WIDTH - X - 1 || x < -(WIDTH - X) || y > HEIGHT - Y || y < -(HEIGHT - Y) + 1)
-     return 1;
-    grid[Y - y][X + x] = '+'; // '°';
-    return 1;
-}
+    // int SCREENW = 60, SCREENH = 40;//размеры поля вывода в символах
 
-/* Инициализируем сетку */
+    char screen[SCREENW][SCREENH];
 
-void init_grid(void)
-{
-    int x, y;
-    int WIDTH = 56;
-    int HEIGHT = 28;
-    int X = WIDTH / 2;
-    int Y = HEIGHT / 2;
+    double x, y[SCREENW];
 
+    double ymin = 0, ymax = 0;
 
-    for (y = 0; y < HEIGHT; y++)
-        for (x = 0; x < WIDTH; x++)
-            grid[y][x] = ' ';
+    double hx, hy;
 
-    /* рисуем ось */
+    int i, j;
 
-    for (y = 0; y < HEIGHT; y++)
+    int xz, yz;
 
-        grid[y][X] = '|';
-    for (x = 0; x < WIDTH; x++)
+    hx = (x1 - x0) / (SCREENW - 1);
 
-        grid[Y][x] = '_';
-    grid[Y][X] = '+';
-}
+    for (i = 0, x = x0; i < SCREENW; ++i, x += hx) {
 
-/* отображение сетки */
+        y[i] = f(x); //расчет значений функции для каждой точки поля вывода графика
 
-void show_grid(void)
-{
-    int x, y;
-    int WIDTH = 56;
-    int HEIGHT = 28;
-    int X = WIDTH / 2;
-    int Y = HEIGHT / 2;
+        if (y[i] < ymin) ymin = y[i];
 
-    for (y = 0; y < HEIGHT; y++)
-    {
-        for (x = 0; x < WIDTH; x++)
-            putchar(WIDTH / 2, HEIGHT / 2);
-       putchar('\n');
+        if (y[i] > ymax) ymax = y[i];
+
     }
+
+    hy = (ymax - ymin) / (SCREENH - 1);
+
+    yz = (int)floor(ymax / hy + 0.5);
+
+    xz = (int)floor((0. - x0) / hx + 0.5);
+
+    //построение осей и заполнение массива отображения пробелами
+
+    for (j = 0; j < SCREENH; ++j)
+
+        for (i = 0; i < SCREENW; ++i) {
+
+            if (j == yz && i == xz) screen[i][j] = '+';
+
+            else if (j == yz) screen[i][j] = '-';
+
+            else if (i == xz) screen[i][j] = '|';
+
+            else screen[i][j] = ' ';
+
+        }
+
+    //определение положения значения функции на поле вывода
+
+    for (i = 0; i < SCREENW; ++i) {
+
+        j = (int)floor((ymax - y[i]) / hy + 0.5);
+
+        screen[i][j] = '*';
+
+    }
+
+    //печать массива символов
+
+    for (j = 0; j < SCREENH; ++j) {
+
+        for (i = 0; i < SCREENW; ++i)  putchar(screen[i][j]);
+
+        putchar('\n');
+
+    }
+
 }
+
+
+
