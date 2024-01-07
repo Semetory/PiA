@@ -1,0 +1,5 @@
+﻿  Sour.c
+C:\Users\Home\source\repos\Functions\Functions\Sour.c(12,37): warning C4101: g1_1: неиспользованная локальная переменная
+C:\Users\Home\source\repos\Functions\Functions\Sour.c(12,28): warning C4101: g1: неиспользованная локальная переменная
+C:\Users\Home\source\repos\Functions\Functions\Sour.c(12,34): warning C4101: g3: неиспользованная локальная переменная
+  Functions.vcxproj -> C:\Users\Home\source\repos\Functions\x64\Debug\Functions.exe

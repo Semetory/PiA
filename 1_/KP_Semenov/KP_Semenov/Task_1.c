@@ -12,55 +12,346 @@ typedef double (*TFun) (double);
 void plot(double x0, double x1, TFun f);
 double fun1(double x);
 double fun2(double x);
+double FXI1(double h, int numb, double xn, double xk);
+double FXI2(double h, int numb, double xn, double xk);
+
+double Gran = 25;
+double MGran = -25;
 
 int main() {
 
-    double x, y;
     int Var = 0;
+    int numb,Part;
+    double x,h,xn,xk;
 
     setlocale(LC_ALL, "RUS");
 
-    puts("Приветствую тебя пользователь");
-    puts("Данная программа строит график функции по введенным значениям x и y");
+    while (Var !=6) {
 
-    puts("Выбирете исспользуемую формулу для построения графика функции, и введите её номер (1 или 2).");
-    puts("Первая(1) : Y(x) = x ^ 2 - PI * x * cos(PI * x)");
-    puts("Вторая (2): V(x) = \n(1 + x + pow(x, 2)) / (1 + pow(x,2)), если х < 0\n");
-    puts("sqrt(1 + (2 * x) / (1 + pow(x, 2))), если 0 <= x<1\n2 * abs(0.5 + sin(x)), если x >= 1");
+        puts("\n\nПриветствую тебя пользователь");
+        puts("Меню программы\nВыбирете пункт");
+        puts("1. Значение функции F1(x)");
+        puts("2. Значение функции F2(x)");
+        puts("3. Вычислить значения функции F1(x) на заданном интервале");
+        puts("4. Вычислить значения функции F2(x) на заданном интервале");
+        puts("5. Построить график F1(x) или F2(x)");
+        puts("6. Завершение работы");
 
-    puts("\nВведите номер:");
-    scanf("%i", &Var);
+        scanf("%d",&Var);
 
-    puts("Введите x и y");
-    scanf("%lf%lf", &x, &y);
+        switch (Var) {
 
-    switch (Var) {
+        case 1:
 
-    case 1:
-        plot(x, y, fun1);
+            puts("Введите значение x");
+            scanf("%lf",&x);
+            if (x == 0) {
+                puts("Введенное значение выходит за пределы ОДЗ");
+                break;
+            }
+            double f = fun1(x);
+            printf("----------------------------");
+            printf("\n|x=%lf|F1(x)=%lf|",x,f);
+            printf("\n----------------------------");
+            break;
+
+        case 2:
+
+            puts("Введите значение x");
+            scanf("%lf",&x);
+            if (x == 0) {
+                puts("Введенное значение выходит за пределы ОДЗ");
+                break;
+            }
+            double f1 = fun2(x);
+            printf("----------------------------");
+            printf("\n|x=%lf|F1(x)=%lf|",x,f1);
+            printf("\n----------------------------");
+            break;
+
+        case 3:
+
+            puts("Введите значение номер интервала:\n1: (xn,xk)\n2: [xn,xk)\n3: (xn,xk]\n4: [xn,xk]");
+            scanf("%i", &numb);
+            puts("Введите значение шага h");
+            scanf("%lf",&h);
+
+            puts("Введите значение xn");
+            scanf("%lf",&xn);
+            puts("Введите значение xk");
+            scanf("%lf",&xk);
+
+            FXI1(h,numb,xn,xk);
+            break;
+
+        case 4:
+
+            puts("Введите значение номер интервала:\n1: (xn,xk)\n2: [xn,xk)\n3: (xn,xk]\n4: [xn,xk]");
+            scanf("%i",&numb);
+            puts("Введите значение шага h");
+            scanf("%lf", &h);
+
+            puts("Введите значение xn");
+            scanf("%lf",&xn);
+            puts("Введите значение xk");
+            scanf("%lf",&xk);
+
+            FXI2(h,numb,xn,xk);
+            break;
+
+        case 5:
+
+            puts("Выбирете функцию F1(x) или F2(x)");
+            puts("\nПервая(1): \n\nY(x) = x ^ 2 - PI * x * cos(PI * x)\n");
+            puts("Вторая(2): \n\n\t(1 + x + pow(x, 2)) / (1 + pow(x,2)), если х < 0");
+            puts("V(x) =  sqrt(1 + ((2 * x) / (1 + pow(x, 2)))), если 0 <= x<1\n\t2 * abs(0.5 + sin(x)), если x >= 1");
+
+
+            puts("\nВведите номер выбранной вами функции (число):");
+            scanf("%i",&Part);
+
+            puts("Введите значение x");
+            scanf("%lf",&x);
+
+            if (Part == 1) plot(x, -x, fun1);
+            if (Part == 2) plot(x, -x, fun2);
+            break;
+
+        case 6:
+            break;
+
+        default:
+            puts("При выборе номера пункта программы было введено некорректное значение");
+        }
+    }
+    return 1;
+}
+
+double FXI1(double h,int numb, double xn, double xk) {
+
+
+    double F1_gran = Gran; //в качестве пределов для избежания безконечного повторения функции используется глобольная переменная Gran = 15;
+    double F1_gran_2 = MGran;
+    
+    double x1n = xn;
+    double x1k = xk;
+    double d;
+
+
+    switch (numb)
+    {
+    case 1:             //(xn,xk) 
+
+        puts("-------------------");
+
+        do
+        {
+
+            d = fun1(F1_gran_2);
+            printf("\n|%lf|%lf|", F1_gran_2, d);
+            F1_gran_2 += h;
+
+        } while (F1_gran_2 <= xn);
+
+        do
+        {
+
+            d = fun1(x1k);
+            printf("\n|%lf|%lf|", x1k, d);
+            x1k += h;
+
+        } while (x1k <= F1_gran);
+
+        puts("\n-------------------");
         break;
-    case 2:
-        plot(x, y, fun2);
+
+    case 2:             //[xn,xk) 
+
+        puts("\n-------------------");
+
+        do
+        {
+
+            d = fun1(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+
+        } while (x1n <= xk);
+        do
+        {
+
+            x1k += h;
+            d = fun1(x1k);
+            printf("\n|%lf|%lf|", x1k, d);
+        
+        } while (x1k <= F1_gran);
+
+        puts("\n-------------------");
         break;
-    default:
-        puts("При выборе номера функции была допущена ошибка");
+
+    case 3:             //(xn,xk]
+
+        puts("-------------------");
+
+        do
+        {
+
+            d = fun1(F1_gran_2);
+            printf("\n|%lf|%lf|", F1_gran_2, d);
+            F1_gran_2 += h;
+
+        } while (F1_gran_2 <= xn);
+        do
+        {
+        
+            d = fun1(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+        
+        } while (x1n <= xk);
+
+        puts("\n-------------------");
+        break;
+
+    case 4:                //[xn;xk]
+
+        puts("-------------------");
+
+        do
+        {
+            d = fun1(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+
+        } while (x1n <= xk);
+
+        puts("\n-------------------");
+        break;
+
+    default: 
+        puts("Выбранный пункт не существует");
         break;
     }
+    return 1;
+}
 
+double FXI2(double h, int numb, double xn, double xk) {
+
+    double F1_gran = Gran; //в качестве пределов для избежания безконечного повторения функции используется глобольная переменная Gran = 15;
+    double F1_gran_2 = MGran;
+
+    double x1n = xn;
+    double x1k = xk;
+    double d;
+
+    switch (numb)
+    {
+    case 1:             //(xn,xk) 
+
+        puts("-------------------");
+
+        do
+        {
+
+            d = fun2(F1_gran_2);
+            printf("\n|%lf|%lf|", F1_gran_2, d);
+            F1_gran_2 += h;
+
+        } while (F1_gran_2 <= xn);
+
+        do
+        {
+
+            d = fun2(x1k);
+            printf("\n|%lf|%lf|", x1k, d);
+            x1k += h;
+
+        } while (x1k <= F1_gran);
+
+        puts("\n-------------------");
+        break;
+
+    case 2:             //[xn,xk) 
+
+        puts("\n-------------------");
+
+        do
+        {
+
+            d = fun2(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+
+        } while (x1n <= xk);
+        do
+        {
+
+            x1k += h;
+            d = fun2(x1k);
+            printf("\n|%lf|%lf|", x1k, d);
+
+        } while (x1k <= F1_gran);
+
+        puts("\n-------------------");
+        break;
+
+    case 3:             //(xn,xk]
+
+        puts("-------------------");
+
+        do
+        {
+
+            d = fun2(F1_gran_2);
+            printf("\n|%lf|%lf|", F1_gran_2, d);
+            F1_gran_2 += h;
+
+        } while (F1_gran_2 <= xn);
+        do
+        {
+
+            d = fun2(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+
+        } while (x1n <= xk);
+
+        puts("\n-------------------");
+        break;
+
+    case 4:                //[xn;xk]
+
+        puts("-------------------");
+
+        do
+        {
+            d = fun2(x1n);
+            printf("\n|%lf|%lf|", x1n, d);
+            x1n += h;
+
+        } while (x1n <= xk);
+
+        puts("\n-------------------");
+        break;
+
+    default:
+        puts("Выбранный пункт не существует");
+        break;
+    }
+    return 1;
 }
 
 double fun1(double x) { return pow(x,2)-PI*x*cos(PI*x); }
 
 double fun2(double x) { 
-    
-    if(x<0)  return (1 + x + pow(x, 2)) / (1 + pow(x,2));
 
-    if(x>=0 || x<1)  return sqrt(1 + (2 * x) / (1 + pow(x, 2)));
+     if (x < 0)  return (1 + x + pow(x, 2)) / (1 + pow(x, 2));
 
-    if (x>=1)  return 2 * abs(0.5 + sin(x));
+     if (x >= 0 || x < 1)  return sqrt(1 + (2 * x) / (1 + pow(x, 2)));
+
+     if (x >= 1)  return 2 * abs(0.5 + sin(x));
 
 }
-
 
 void plot(double x0, double x1, TFun f) {
    
@@ -133,6 +424,3 @@ void plot(double x0, double x1, TFun f) {
     }
 
 }
-
-
-

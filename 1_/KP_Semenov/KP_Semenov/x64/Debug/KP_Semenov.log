@@ -1,4 +1,4 @@
 ﻿  Task_1.c
-C:\Users\Home\source\repos\KP_Semenov\KP_Semenov\Task_1.c(58,35): warning C4244: функция: преобразование "double" в "int", возможна потеря данных
-C:\Users\Home\source\repos\KP_Semenov\KP_Semenov\Task_1.c(60): warning C4715: fun2: значение возвращается не при всех путях выполнения
+C:\Users\Home\source\repos\KP_Semenov\KP_Semenov\Task_1.c(354): warning C4715: fun2: значение возвращается не при всех путях выполнения
+C:\Users\Home\source\repos\KP_Semenov\KP_Semenov\Task_1.c(352,38): warning C4244: функция: преобразование "double" в "int", возможна потеря данных
   KP_Semenov.vcxproj -> C:\Users\Home\source\repos\KP_Semenov\x64\Debug\KP_Semenov.exe
