@@ -113,6 +113,11 @@ int main() {
             puts("Введите значение x");
             scanf("%lf",&x);
 
+            if (x == 0) {
+                puts("Введенное значение выходит за пределы ОДЗ");
+                break;
+            }
+
             if (Part == 1) plot(x, -x, fun1);
             if (Part == 2) plot(x, -x, fun2);
             break;
