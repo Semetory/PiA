@@ -15,8 +15,9 @@ double fun2(double x);
 double FXI1(double h, int numb, double xn, double xk);
 double FXI2(double h, int numb, double xn, double xk);
 
-double Gran = 25;
-double MGran = -25;
+double MGran = -10;
+double Gran = 10;
+
 
 int main() {
 
@@ -25,6 +26,10 @@ int main() {
     double x,h,xn,xk;
 
     setlocale(LC_ALL, "RUS");
+
+    printf("------------------------");
+    puts("\n| Семенов Д.А. бИСТ-234|");
+    printf("------------------------");
 
     while (Var !=6) {
 
@@ -59,10 +64,6 @@ int main() {
 
             puts("Введите значение x");
             scanf("%lf",&x);
-            if (x == 0) {
-                puts("Введенное значение выходит за пределы ОДЗ");
-                break;
-            }
             double f1 = fun2(x);
             printf("----------------------------");
             printf("\n|x=%lf|F1(x)=%lf|",x,f1);
@@ -101,7 +102,7 @@ int main() {
 
         case 5:
 
-            puts("Выбирете функцию F1(x) или F2(x)");
+            puts("Выберете  функцию F1(x) или F2(x)");
             puts("\nПервая(1): \n\nY(x) = x ^ 2 - PI * x * cos(PI * x)\n");
             puts("Вторая(2): \n\n\t(1 + x + pow(x, 2)) / (1 + pow(x,2)), если х < 0");
             puts("V(x) =  sqrt(1 + ((2 * x) / (1 + pow(x, 2)))), если 0 <= x<1\n\t2 * abs(0.5 + sin(x)), если x >= 1");
