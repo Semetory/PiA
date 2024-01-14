@@ -2,11 +2,9 @@
 #include <math.h>
 #include <locale.h>
 
-#define _CRT_SECURE_NO_DEPRECATE
-
-#define SCREENW 60
-#define SCREENH 80
-#define PI 3.14
+#define SCREENW 60 //Длинна поля вывода
+#define SCREENH 80 //Высота поля вывода
+#define PI 3.14 //Константа числа PI
 
 typedef double (*TFun) (double);
 void plot(double x0, double x1, TFun f);
@@ -18,10 +16,9 @@ double FXI2(double h, int numb, double xn, double xk);
 double MGran = -10;
 double Gran = 10;
 
-
 int main() {
 
-    int Var = 0;
+    int Var = 0; //Переменная в значение которой выбирается пункт из меню пользовательского интерфейса
     int numb,Part;
     double x,h,xn,xk;
 
@@ -42,9 +39,9 @@ int main() {
         puts("5. Построить график F1(x) или F2(x)");
         puts("6. Завершение работы");
 
-        scanf("%d",&Var);
+        scanf("%d",&Var); //Ввод пользователем номера пункта меню использую переменную Var 
 
-        switch (Var) {
+        switch (Var) { //Выбор пункта меню по значению переменной Var
 
         case 1:
 
