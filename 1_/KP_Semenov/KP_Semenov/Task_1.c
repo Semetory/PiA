@@ -32,11 +32,11 @@ int main() {
 
         puts("\n\nПриветствую тебя пользователь");
         puts("Меню программы\nВыбирете пункт");
-        puts("1. Значение функции F1(x)");
-        puts("2. Значение функции F2(x)");
-        puts("3. Вычислить значения функции F1(x) на заданном интервале");
-        puts("4. Вычислить значения функции F2(x) на заданном интервале");
-        puts("5. Построить график F1(x) или F2(x)");
+        puts("1. Значение функции Y(x)");
+        puts("2. Значение функции V(x)");
+        puts("3. Вычислить значения функции Y(x) на заданном интервале");
+        puts("4. Вычислить значения функции V(x) на заданном интервале");
+        puts("5. Построить график Y(x) или V(x)");
         puts("6. Завершение работы");
 
         scanf("%d",&Var); //Ввод пользователем номера пункта меню использую переменную Var 
@@ -53,7 +53,7 @@ int main() {
             }
             double f = fun1(x);
             printf("----------------------------");
-            printf("\n|x=%lf|F1(x)=%lf|",x,f);
+            printf("\n|x=%lf|Y(x)=%lf|",x,f);
             printf("\n----------------------------");
             break;
 
@@ -63,7 +63,7 @@ int main() {
             scanf("%lf",&x);
             double f1 = fun2(x);
             printf("----------------------------");
-            printf("\n|x=%lf|F1(x)=%lf|",x,f1);
+            printf("\n|x=%lf|Y(x)=%lf|",x,f1);
             printf("\n----------------------------");
             break;
 
@@ -99,7 +99,7 @@ int main() {
 
         case 5:
 
-            puts("Выберете  функцию F1(x) или F2(x)");
+            puts("Выберете  функцию Y(x) или V(x)");
             puts("\nПервая(1): \n\nY(x) = x ^ 2 - PI * x * cos(PI * x)\n");
             puts("Вторая(2): \n\n\t(1 + x + pow(x, 2)) / (1 + pow(x,2)), если х < 0");
             puts("V(x) =  sqrt(1 + ((2 * x) / (1 + pow(x, 2)))), если 0 <= x<1\n\t2 * abs(0.5 + sin(x)), если x >= 1");
@@ -145,7 +145,7 @@ double FXI1(double h,int numb, double xn, double xk) {
     {
     case 1:             //(xn,xk) 
 
-        puts("-------------------");
+        puts("---------------------");
 
         do
         {
@@ -165,12 +165,12 @@ double FXI1(double h,int numb, double xn, double xk) {
 
         } while (x1k <= F1_gran);
 
-        puts("\n-------------------");
+        puts("\n---------------------");
         break;
 
     case 2:             //[xn,xk) 
 
-        puts("\n-------------------");
+        puts("\n---------------------");
 
         do
         {
@@ -189,12 +189,12 @@ double FXI1(double h,int numb, double xn, double xk) {
         
         } while (x1k <= F1_gran);
 
-        puts("\n-------------------");
+        puts("\n---------------------");
         break;
 
     case 3:             //(xn,xk]
 
-        puts("-------------------");
+        puts("---------------------");
 
         do
         {
@@ -213,7 +213,7 @@ double FXI1(double h,int numb, double xn, double xk) {
         
         } while (x1n <= xk);
 
-        puts("\n-------------------");
+        puts("\n---------------------");
         break;
 
     case 4:                //[xn;xk]
@@ -251,7 +251,7 @@ double FXI2(double h, int numb, double xn, double xk) {
     {
     case 1:             //(xn,xk) 
 
-        puts("-------------------");
+        puts("---------------------");
 
         do
         {
@@ -271,12 +271,12 @@ double FXI2(double h, int numb, double xn, double xk) {
 
         } while (x1k <= F1_gran);
 
-        puts("\n-------------------");
+        puts("\n---------------------");
         break;
 
     case 2:             //[xn,xk) 
 
-        puts("\n-------------------");
+        puts("\n---------------------");
 
         do
         {
@@ -295,12 +295,12 @@ double FXI2(double h, int numb, double xn, double xk) {
 
         } while (x1k <= F1_gran);
 
-        puts("\n-------------------");
+        puts("\n--------------------");
         break;
 
     case 3:             //(xn,xk]
 
-        puts("-------------------");
+        puts("---------------------");
 
         do
         {
